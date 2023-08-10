@@ -1,0 +1,78 @@
+[
+    {
+        "id": "7da2fa94e4865636",
+        "type": "subflow",
+        "name": "cowsay",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "d5f0674e4ccf4b46"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 340,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "d5f0674e4ccf4b46",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {
+            "module": "node-red-contrib-cowsay0706",
+            "type": "cowsay",
+            "version": "0.0.1",
+            "author": "Brock Anderson",
+            "desc": "a node to generate ascii art",
+            "keywords": "node-red,cowsay",
+            "license": "Apache-2.0"
+        },
+        "color": "#DDAA99"
+    },
+    {
+        "id": "d5f0674e4ccf4b46",
+        "type": "function",
+        "z": "7da2fa94e4865636",
+        "name": "function 2",
+        "func": "msg.payload = cowsay2.say(String(msg.payload));\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "cowsay2",
+                "module": "cowsay2"
+            }
+        ],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c2a5ea3467507881",
+        "type": "subflow:7da2fa94e4865636",
+        "z": "8e0ad04c81208871",
+        "name": "",
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "b9ba4cbbcffea0a6"
+            ]
+        ]
+    }
+]
